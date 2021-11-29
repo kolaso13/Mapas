@@ -10939,7 +10939,7 @@ function crearfiltro() {
 //Funcion para crear la tabla
 function crearTabla() {
     document.getElementById("tabla").innerHTML = "";
-    var sDatos = `<table>
+    /*var sDatos = `<table>
                     <tr>`
                     if(consultarCookie("Municipio")==undefined){
                         sDatos +=  `<th id="lugar" colspan="4">Ofertas en IRUN</th>`;
@@ -10963,6 +10963,33 @@ function crearTabla() {
         </tr>`;
     }
     sDatos += "</table>";
+    document.getElementById("tabla").innerHTML = sDatos;*/
+    var sDatos = `<div class="container">
+                    <div class="row">`
+                    if(consultarCookie("Municipio")==undefined){
+                        sDatos +=  `<div class="col" id="lugar">Ofertas en IRUN</div>`;
+                    }else{
+                        sDatos +=  `<div class="col" id="lugar">Ofertas en ${consultarCookie("Municipio")}</div>`;
+                    }
+
+        sDatos += `  </div>
+                    <div class="row">
+                        <div class="col-md-3 th">Descripcion Empleo</div>
+                        <div class="col-md-3 th">Descripcion del puesto</div>
+                        <div class="col-md-3 th">Fecha de publicacion</div>
+                        <div class="col-md-3 th">Url</div>
+                    </div>`
+    for (i = 0; i < aOfertasF.length; i++) {
+        sDatos += `<div class="row">
+        <div class="col-md-3">${aOfertasF[i].desEmpleo}</div>
+        <div class="col-md-3">${aOfertasF[i].desPuesto}</div>
+        <div class="col-md-3">${aOfertasF[i].fecPub}</div>
+        <div class="col-md-3">
+            <a href="${aOfertasF[i].url}">Link</a>
+        </div>
+        </div>`;
+    }
+    sDatos += "</div>";
     document.getElementById("tabla").innerHTML = sDatos;
 }
 
@@ -11020,5 +11047,6 @@ function consultarCookie(nombre) {
             return unescape(document.cookie.substring(i, j));
         }
     }
+    
 }
 
