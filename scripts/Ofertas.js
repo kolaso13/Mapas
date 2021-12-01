@@ -10939,31 +10939,6 @@ function crearfiltro() {
 //Funcion para crear la tabla
 function crearTabla() {
     document.getElementById("tabla").innerHTML = "";
-    /*var sDatos = `<table>
-                    <tr>`
-                    if(consultarCookie("Municipio")==undefined){
-                        sDatos +=  `<th id="lugar" colspan="4">Ofertas en IRUN</th>`;
-                    }else{
-                        sDatos +=  `<th id="lugar" colspan="4">Ofertas en ${consultarCookie("Municipio")}</th>`;
-                    }
-
-        sDatos += `  </tr>
-                    <tr>
-                        <th>Descripcion Empleo</th>
-                        <th>Descripcion del puesto</th>
-                        <th>Fecha de publicacion</th>
-                        <th>Url</th>
-                    </tr>`;
-    for (i = 0; i < aOfertasF.length; i++) {
-        sDatos += `<tr>
-        <td>${aOfertasF[i].desEmpleo}</td>
-        <td>${aOfertasF[i].desPuesto}</td>
-        <td>${aOfertasF[i].fecPub}</td>
-        <td><a href="${aOfertasF[i].url}">Link<a></td>
-        </tr>`;
-    }
-    sDatos += "</table>";
-    document.getElementById("tabla").innerHTML = sDatos;*/
     var sDatos = `<div class="container">
                     <div class="row">`
                     if(consultarCookie("Municipio")==undefined){
